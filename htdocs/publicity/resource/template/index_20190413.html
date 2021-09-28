@@ -1,0 +1,223 @@
+<?php
+	$page_name = 'ニュース';
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Bosley（ボズレー）商品サイトの店舗検索に関して記載しています。">
+<meta name="keywords" content="Bosley、ボズレー、毛髪改善シャンプー、薄毛の悩み改善、株式会社ネイチャーラボ">
+<meta property="og:url" content="http://www.bosleypro.jp/company.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="新着情報｜Bosley-ボズレー-" />
+<meta property="og:description" content="Bosley（ボズレー）商品サイトの新着情報に関して記載しています。" />
+<!-- <meta property="og:image" content="img/index-main-img-01.jpg" /> -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@bosley" />
+<meta name="twitter:title" content="新着情報｜Bosley-ボズレー-" />
+<meta name="twitter:description" content="Bosley（ボズレー）商品サイトの新着情報に関して記載しています。" />
+<!-- <meta name="twitter:image" content="img/index-main-img-01.jpg" /> -->
+<title>新着情報｜Bosley-ボズレー-</title>
+<link href="../css/reset.css" rel="stylesheet" type="text/css">
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<link href="../css/publicity.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../js/slick.css">
+<link rel="stylesheet" type="text/css" href="../css/tooltipster.bundle.css">
+<link rel="stylesheet" type="text/css" href="../css/tooltipster-sideTip-borderless.min.css">
+<link href="../css/lightbox.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<script src="../js/html5.js"></script>
+<![endif]-->
+</head>
+<body id="page_publicity">
+
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P5QCF6"
+height="0" width="0"
+style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P5QCF6');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Yahoo Tag Manager -->
+<script type="text/javascript">
+(function () {
+var tagjs = document.createElement("script");
+var s = document.getElementsByTagName("script")[0];
+tagjs.async = true;
+tagjs.src = "//s.yjtag.jp/tag.js#site=rFoSoyN";
+s.parentNode.insertBefore(tagjs, s);
+}());
+</script>
+<noscript>
+<iframe src="//b.yjtag.jp/iframe?c=rFoSoyN" width="1" height="1"
+frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</noscript>
+<!-- End Yahoo Tag Manager -->
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8&appId=314192748964342";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div id="container"><!-- #BeginLibraryItem "/Library/header.lbi" -->
+  <header id="header" class="clearfix">
+  <?php
+    $webroot = $_SERVER['DOCUMENT_ROOT'];
+    include($webroot."/inc/header.html");
+  ?>
+  </header>
+<div class="com-top-navi clearfix">
+	<ul id="g-navi">
+		<li><a href="/">トップページ</a></li>
+		<li><a href="../bosley">ボズレーについて</a></li>
+		<li><a href="../product">商品一覧</a></li>
+		<li><a href="../shop">店舗検索</a></li>
+		<!--<li><a href="experiences">体験談一覧</a></li>-->
+	</ul>
+	<ul class="img-navi">
+			<li><div class="fb-share-button" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse">シェア</a></div></li>
+			<li><a href="https://twitter.com/share" class="twitter-share-button" data-size="large">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+			<li><div class="line-it-button" style="display: none;" data-type="share-c" data-lang="ja" ></div>
+			<script src="//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async" defer="defer" ></script></li>
+		</ul>
+</div>
+<!-- #EndLibraryItem --><section id="main">
+		<div class="main-box clearfix">
+			<section id="conts">
+				<h1 class="heading01">新着情報</h1>
+		
+		<$ENTRIES$>
+			<section class="article">
+				<p class="date"><time datetime="<$pub_date$>"><$pub_date$></time></p>
+				<h2><$title$></h2>
+				<div class="content clearfix">
+					<div class="left">
+						<$image$>
+							<p class="thumbnail">
+								<a href="/publicity/user_images/<$attachment$>" rel="lightbox" data-lightbox="group_<$id_publicity$>">
+									<img src="/publicity/user_images/<$thumb$>" alt="<$alt$>" width="120" height="120" />
+								</a>
+							</p>
+						<$/image$>
+					</div>
+					<div class="right">
+						<p class="excerpt"><$body$></p>
+						<$has_link$>
+							<ul>
+							<$link$>
+								<li><a href="<$link_url$>" target="_blank"><$link_title$></a></li>
+							<$/link$>
+							</ul>
+						<$/has_link$>
+					</div>
+				</div>
+			</section>
+		<$/ENTRIES$>
+
+		<section class="backnumber_wrapper">
+			<?php include($_SERVER['DOCUMENT_ROOT'] . "/publicity/backnumber.html"); ?>
+		</section>
+
+
+			</section>	
+			<aside id="side">
+
+        <div id="side-item">
+        <?php
+          $webroot = $_SERVER['DOCUMENT_ROOT'];
+          include($webroot."/inc/side.html");
+        ?>
+        </div>
+
+				<div class="com-inner clearfix"><a href="/bosley/bosley.html">
+					<div class="photo"><img src="/img/side-img-11.jpg" width="100" height="100" alt=""></div>
+					<div class="text-box">
+						<h2>ボズレーのご紹介</h2>
+						<h3>【世界46カ国での実績】毛髪科学の世界的パイオニア Dr.ボズレーって？</h3>
+					</div>
+					</a></div>
+				<div class="com-inner clearfix"><a href="/bosley/trouble.html">
+					<div class="photo"><img src="/img/side-img-12.jpg" width="100" height="100" alt=""></div>
+					<div class="text-box">
+						<h2>男性よりも女性のほうが気にしている</h2>
+						<h3>30代女性の7割が毛髪トラブルに悩んでいる</h3>
+					</div>
+					</a></div>
+				<div class="com-inner com-inner-last none clearfix"><a href="/bosley/improvement.html">
+					<div class="photo"><img src="/img/side-img-13.jpg" width="100" height="100" alt="毛髪 毛包幹細胞 毛母細胞 毛乳頭 毛細血管 バルジ領域 ※発毛に関わりの深い領域 皮脂腺"></div>
+					<div class="text-box">
+						<h2>毛髪トラブルを改善する方法は？</h2>
+						<h3>女性ホルモンの減少によりDHTが生成され、毛髪トラブルの原因に</h3>
+					</div>
+					</a></div>
+				<div class="side-slider-box mb0 slider-box">
+					<div class="slider">
+						<div><a href="/product/starterkit.html"><img src="/img/side-slider-img-01.jpg" width="400" height="400" alt=""></a></div>
+						<!--<div><a href="bosley/bosley.html"><img src="img/side-slider-img-02.jpg" width="400" height="400" alt=""></a></div>-->
+						<!-- <div><a href="bosley/improvement.html"><img src="img/side-slider-img-03.jpg" width="400" height="400" alt=""></a></div>
+						<div><a href="bosley/trouble.html"><img src="img/side-slider-img-04.jpg" width="400" height="400" alt=""></a></div> -->
+					</div>
+				</div>
+			</aside>
+		</div>
+		<div class="main-btm-box">
+			<div class="contact-box clearfix">
+				<div class="photo-box"><img src="../img/main-contact-img.jpg" width="218" height="217" alt=""></div>
+				<div class="text-box">
+					<p class="ttl">商品に関するお問い合わせはこちらまで</p>
+					<p class="tel">0120-077-002</p>
+					<p>（平日9:00〜18:00 / 土日・祝日休み）</p>
+				</div>
+			</div>
+		</div>
+	</section><!-- #BeginLibraryItem "/Library/footer.lbi" -->
+<div class="page-top"><a href="#container"><img src="../img/page-top.gif" width="60" height="60" alt=""></a></div>
+  <footer id="footer">
+  <?php
+    $webroot = $_SERVER['DOCUMENT_ROOT'];
+    include($webroot."/inc/footer.html");
+  ?>
+  </footer>
+<!-- #EndLibraryItem --></div>
+<script src="../js/jquery-1.11.3.min.js"></script>
+<!--<script src="../js/jquery.page-scroller.js"></script>-->
+<script src="../js/heightLine.js"></script>
+<script src="../js/tooltipster.bundle.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('.tooltip').tooltipster({
+  	animation: 'fade',
+		delay: 200,
+		theme: 'tooltipster-borderless',
+		trigger: 'click',
+		contentAsHTML: true,
+		interactive: true,
+		side: 'bottom',
+		functionPosition: function(instance, helper, position){
+        position.coord.left -= 20;
+        return position;
+    }
+	});
+	
+	//ページ上部へ戻る
+	$(".page-top").click(function () {
+		$('html,body').animate({ scrollTop: 0 }, 500, 'swing'
+		);
+		return false;
+	});
+});
+</script>
+<script src="../js/lightbox.js"></script>
+</body>
+</html>

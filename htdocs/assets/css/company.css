@@ -1,0 +1,191 @@
+@charset "UTF-8";
+.copy {
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 2.25;
+  padding: 0px 0 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .copy {
+    font-size: 1.2rem;
+    line-height: 2.0;
+    padding: 0px 0 25px;
+  }
+}
+
+.main-box {
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+.main-box.security {
+  padding-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  #main .main-box {
+    padding-top: 35px;
+    padding-bottom: 40px;
+  }
+}
+
+section {
+  padding: 60px 0;
+}
+
+section#main {
+  padding-bottom: 120px;
+}
+
+section + section {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    padding: 30px 0;
+  }
+  section#main {
+    padding-bottom: 70px;
+  }
+  section + section {
+    margin-top: 30px;
+  }
+}
+
+.company-block {
+  padding: 45px 49px;
+  -webkit-box-shadow: 10px 10px 10px 6px rgba(144, 144, 144, 0.1);
+          box-shadow: 10px 10px 10px 6px rgba(144, 144, 144, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .company-block {
+    padding: 25px;
+  }
+}
+
+.company-block .block {
+  font-size: 15px;
+  text-align: center;
+  line-height: 2.2;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .company-block .block {
+    font-size: 12px;
+    text-align: left;
+  }
+}
+
+.company-block .list {
+  width: 73%;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.8;
+  padding-left: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  .company-block .list {
+    width: 100%;
+  }
+}
+
+.company-block .list.text-under {
+  margin-top: 1em;
+}
+
+.company-block .list li {
+  list-style-type: disc;
+}
+
+.company-block .list li + li {
+  margin-top: .5em;
+}
+
+.company-block .box {
+  width: 49%;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 768px) {
+  .company-block .box {
+    width: 100%;
+  }
+}
+
+.company-block .box.text-under {
+  margin-top: 1em;
+}
+
+.log {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 15px;
+}
+
+.log p + p {
+  margin-top: 1em;
+}
+
+/* テーブルのCSS用意する */
+.tblType01 {
+  width: 100%;
+  /*
+    margin-top: 45px;
+     */
+  font-size: 15px;
+  border: 2px solid #cfcfcf;
+}
+
+@media screen and (max-width: 768px) {
+  .tblType01 {
+    margin-top: 25px;
+    border-bottom: none;
+  }
+}
+
+.tblType01 th,
+.tblType01 td {
+  padding: 18px 15px;
+  border-top: 2px solid #cfcfcf;
+  border-bottom: 2px solid #cfcfcf;
+  vertical-align: middle;
+}
+
+.tblType01 th {
+  background: #eeeeee;
+  border-right: 2px solid #cfcfcf;
+  font-weight: bold;
+  text-align: center;
+  width: 20%;
+}
+
+@media screen and (max-width: 768px) {
+  .tblType01 th {
+    border: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 5px 15px;
+  }
+}
+
+.tblType01 td {
+  padding: 18px 55px;
+}
+
+@media screen and (max-width: 768px) {
+  .tblType01 td {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 5px 15px;
+  }
+}
+/*# sourceMappingURL=company.css.map */

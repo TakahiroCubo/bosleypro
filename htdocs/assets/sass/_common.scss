@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+$color_font:#000; //フォントカラー
+$color1:#ea537e; //メインカラー
+$color2:#fce5e8; //サブカラー1
+$break:768; //スマホ用ブレイクポイント
+$font-yu-mincho: '游明朝体',
+'游明朝',
+YuMincho,
+'Yu Mincho',
+serif; //游明朝
+
+
+@mixin translate($moveX: 0, $moveY: 0) {
+    -webkit-transform: translate($moveX, $moveY);
+    -ms-transform: translate($moveX, $moveY);
+    transform: translate($moveX, $moveY);
+}
+
+//ボタン
+@mixin button($max-w: initial, $f-size: 1.6, $btn-color:#fff) {
+    display: block;
+    width: 100%;
+    max-width: $max-w+px;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 0.06em;
+    font-size: $f-size+rem;
+    line-height: 60px;
+    position: relative;
+    background: #fff;
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: $btn-color;
+        top: 0;
+        left: 0;
+    }
+
+    span {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+    }
+
+    i {
+        position: absolute;
+        top: 50%;
+        right: 17px;
+        z-index: 1;
+
+        &:before,
+        &:after {
+            content: "";
+            background: #fff;
+            height: 1px;
+            display: block;
+        }
+
+        &:before {
+            width: 20px;
+        }
+
+        &:after {
+            width: 6px;
+            transform: rotate(50deg);
+            position: absolute;
+            right: 0;
+            bottom: 3px;
+        }
+    }
+
+    @include mq_min {
+        &:hover {
+            box-shadow: 0px 0px 0px 1px $btn-color inset;
+
+            &:after {
+                width: 0%;
+            }
+
+            span {
+                color: $btn-color;
+            }
+
+            i {
+                right: 10px;
+
+                &:before,
+                &:after {
+                    background: $btn-color;
+                }
+            }
+        }
+    }
+}
+
+
+//ブレイクポイント
+@mixin mq_max($viewport:$break) {
+    @media screen and (max-width: $viewport+"px") {
+        @content;
+    }
+}
+
+@mixin mq_min($viewport:$break) {
+    @media screen and (min-width: $viewport+"px") {
+        @content;
+    }
+}
+
+//Viewportサイズ
+@function vw($px, $viewport:null) {
+    @if $viewport==null {
+        $viewport: $break;
+    }
+
+    @return $px / $viewport * 100vw;
+}

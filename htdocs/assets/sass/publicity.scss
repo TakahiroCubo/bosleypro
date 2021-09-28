@@ -1,0 +1,263 @@
+@charset "utf-8";
+
+//パーシャル読み込み
+@import "set"; //便利セット
+@import "common"; //サイトで使う共通セット
+
+section#main {
+  padding-bottom: 120px;
+}
+
+@include mq_max {
+  section#main {
+    padding-bottom: 70px;
+  }
+}
+.main-box {
+    padding-bottom: 80px;
+}
+@include mq_max {
+    .main-box {
+        padding-bottom: 40px;
+    }
+}
+
+section {
+    padding: 60px 0;
+
+    &.backnumber_wrapper {
+        padding: 35px 0;
+    }
+
+    + section {
+        margin-top: 80px;
+    }
+}
+@include mq_max {
+    section {
+        padding: 30px 0;
+
+      &.backnumber_wrapper {
+        padding: 20px 0;
+      }
+
+        + section {
+            margin-top: 40px;
+        }
+    }
+}
+
+#main .main-box {
+    padding-top: 70px;
+}
+@include mq_max {
+    #main .main-box {
+      padding: 35px 12px;
+    }
+}
+
+.backnumber_wrapper {
+    margin-bottom: 30px;
+
+    ul {
+
+        li {
+            float: left;
+            width: 20%;
+            text-align: center;
+            line-height: 27px;
+            border-right: solid 1px #fce5e8;
+
+            &:nth-child(5n) {
+                border: none;
+            }
+        }
+    }
+
+}
+@include mq_max {
+  .backnumber_wrapper {
+
+    ul {
+
+      li {
+        float: left;
+        width: 33.333333%;
+        text-align: center;
+        line-height: 27px;
+        border-right: solid 1px #fce5e8;
+
+        &:nth-child(5n) {
+          border-right: solid 1px #fce5e8;
+        }
+        &:nth-child(3n) {
+          border-right: none;
+        }
+      }
+    }
+
+  }
+}
+
+//ブログ記事
+.article {
+  background: #fff;
+  margin: 0 70px;
+  padding: 36px 40px 28px;
+  position: relative;
+  font-size: 1.6rem;
+
+  min-height: 430px;
+
+  + .article {
+    margin-top: 30px;
+  }
+
+    h2 {
+      color: #e9537d;
+      font-size: 2.2rem;
+      position: relative;
+      padding-bottom: 25px;
+      margin-bottom: 28px;
+
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 44px;
+            height: 2px;
+            background: #e9537d;
+        }
+    }
+
+  .thumbnail-box {
+    /*
+    position: absolute;
+    top: 122px;
+    right: -70px;
+    */
+    float: right;
+    margin-right: -109px;
+
+    .thumbnail {
+      float: left;
+      a {
+        img {
+          border: solid 1px #e6e6e6;
+          width: 198px;
+        }
+      }
+    }
+    &.thumnail-logo {
+      pointer-events: none;
+    }
+  }
+
+  .excerpt {
+    line-height: 1.5;
+  }
+
+  .date {
+    position: absolute;
+    bottom: 28px;
+    right: 40px;
+    color: #e9537d;
+  }
+
+}
+@include mq_max {
+    .article {
+      margin: 0;
+      padding: 20px 20px 10px 20px;
+      font-size: 1.4rem;
+
+      min-height: inherit;
+
+      padding-bottom: 3em;
+
+
+      h2 {
+        font-size: 1.5rem;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+
+        &:after{
+          width: 22px;
+          height: 1px;
+        }
+      }
+
+      .thumbnail-box {
+        float: none;
+        margin-right: inherit;
+        margin-bottom: 20px;
+
+        .thumbnail {
+          width: 50%;
+          a {
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .date {
+        right: 20px;
+        bottom: 10px;
+      }
+
+    }
+}
+
+.detail__btn {
+  margin-top: 30px;
+  margin-bottom: 45px;
+  /*
+  text-align: center;
+   */
+
+  a {
+    padding-left: 35px;
+    position: relative;
+    border-bottom: solid 2px #e9537d;
+    color: #e9537d;
+
+    &:before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: #e9537d;
+    }
+
+    &:after{
+      content: "";
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      width: 9px;
+      height: 1px;
+      -webkit-transform: rotate(50deg);
+      transform: rotate(50deg);
+      background: #e9537d;
+      margin-top: -3px;
+    }
+    &:hover {
+      text-decoration: none;
+      border-bottom: none;
+    }
+  }
+
+}
+@include mq_max {
+  .detail__btn {
+    margin-top: 20px;
+    margin-bottom: 0;
+
+  }
+}

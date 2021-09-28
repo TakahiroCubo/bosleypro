@@ -1,0 +1,547 @@
+@charset "utf-8";
+
+//パーシャル読み込み
+@import "set"; //便利セット
+@import "common"; //サイトで使う共通セット
+
+#main {
+  padding-bottom: 120px;
+
+  .main-visual {
+    background: #ecebef url(../img/bosley/img-mv.jpg) no-repeat center center;
+
+    .logo {
+      width: 103px;
+    }
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx){
+    .main-visual {
+      background: #ecebef url(../img/bosley/img-mv@2x.jpg) no-repeat center center;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
+  }
+  @media screen and (min-width: 1300px) {
+    .main-visual {
+      background-position: right top;
+    }
+  }
+  @include mq_max {
+    padding-bottom: 60px;
+
+    .main-visual {
+      background: url(../img/bosley/img-mv_sp.jpg) no-repeat center center;
+      background-position: center center;
+      height: 420px;
+      margin-bottom: 50px;
+
+      .main-box {
+        padding-top: 0;//36px;
+      }
+      .logo {
+        width: 116px;
+      }
+    }
+  }
+
+
+  .main-visual {
+    &.main-visual02 {
+      background: url(../img/bosley/img-mv02.jpg) no-repeat center center;
+      height: 373px;
+
+      text-align: right;
+
+      margin-bottom: 217px;
+
+      @include mq_max {
+        background: url(../img/bosley/img-mv02_sp.jpg) no-repeat center center;
+        -webkit-background-size: contain;
+        background-size: contain;
+
+        height: 310px;
+        margin-top: 0;
+        margin-bottom: 187px;
+      }
+
+      .main-box {
+        height: 373px;
+
+        @include mq_max {
+          height: 310px;
+          padding-top: 0;
+        }
+      }
+
+      .text-box {
+        flex-direction:unset;
+        justify-content: flex-end;
+
+        .copy {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  @include mq_max {
+    .main-visual {
+      -webkit-background-size: cover;
+      background-size: cover;
+      margin-top: 30px;
+
+      .main-box {
+        justify-content: center;
+        align-items: normal;
+
+        .copy {
+          height: auto;
+        }
+      }
+
+      &.main-visual02 {
+        .main-box {
+
+          .copy {
+            height: 310px;
+          }
+        }
+      }
+    }
+
+
+  }
+
+  .main-box {
+    /*
+    border: solid 1px #f00;
+     */
+    /*
+    padding-bottom: 80px;
+     */
+
+    &.caption {
+      padding-top: 0;
+      margin-top: 0;
+    }
+  }
+  @include mq_max {
+    .main-box {
+      padding-bottom: 40px;
+
+
+    }
+  }
+}
+
+
+#main {
+  .sec-box {
+    font-size: 1.8rem;
+    line-height: 2.2;
+    min-height: 523px;
+    position: relative;
+    dl {
+      font-weight: bold;
+      letter-spacing: 0.5rem;
+    }
+    dt {
+      /* device
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      padding-bottom: 32px;
+      */
+      margin-bottom: 32px;
+      /* device
+      .num {
+        margin-left: 20px;
+        img {
+          vertical-align: baseline;
+        }
+      }
+      */
+      @include mq_max {
+        padding-bottom: 4vw;
+        margin-bottom: 4vw;
+        .num {
+          margin-left: 2vw;
+          img {
+            width: 13vw;
+          }
+        }
+      }
+      /* device
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background: #fb2477;
+      }
+      */
+    }
+    dd {
+      font-size: 29px;
+      line-height: 1.6;
+      @include mq_max {
+        font-size: 2.2rem;
+      }
+    }
+    @include mq_max {
+      font-size: 1.3rem;
+      line-height: 2.3;
+    }
+
+    &.sec01 {
+      /*
+      background: url(../img/bosley/img-pic-bosley01.png) no-repeat;
+      background-position: calc(100% + 85px) 19px;
+      */
+      &:after{
+        content: '';
+        position: absolute;
+        top: 19px;
+        right: -85px;
+        width: 504px;
+        height: 504px;
+        background: url(../img/bosley/img-pic-bosley01.png) no-repeat;
+        z-index: -1;
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx){
+          background: url(../img/bosley/img-pic-bosley01@2x.png) no-repeat;
+          -webkit-background-size: 100%;
+          background-size: 100%;
+        }
+
+        @include mq_max {
+          position: static;
+          display: block;
+          margin: 5vw auto 0;
+          width: 92%;
+          height: 85vw;
+          background-position: top center;
+          -webkit-background-size: contain;
+          background-size: contain;
+        }
+      }
+    }
+
+    &.sec02 {
+      padding-left: 41.018518%;
+      margin-top: 134px;
+
+      @include mq_max {
+        padding-left: 0;
+        min-height: 760px;
+        margin-top: 0;
+      }
+
+      &:after{
+        content: '';
+        position: absolute;
+        top: -68px;
+        left: -104px;
+        width: 504px;
+        height: 504px;
+        background: url(../img/bosley/img-pic-bosley02.png) no-repeat;
+        z-index: -1;
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx){
+          background: url(../img/bosley/img-pic-bosley02@2x.png) no-repeat;
+          -webkit-background-size: 100%;
+          background-size: 100%;
+        }
+
+        @include mq_max {
+          position: static;
+          display: block;
+          margin: 5vw auto 0;
+          width: 92%;
+          height: 85vw;
+          background-position: top center;
+          -webkit-background-size: contain;
+          background-size: contain;
+        }
+      }
+    }
+
+    &.sec03 {
+      margin-top: 26px;
+      @include mq_max {
+        margin-top: 0;
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        top: 19px;
+        right: -85px;
+        width: 504px;
+        height: 504px;
+        background: url(../img/bosley/img-pic-bosley03.png) no-repeat;
+        z-index: -1;
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx){
+          background: url(../img/bosley/img-pic-bosley03@2x.png) no-repeat;
+          -webkit-background-size: 100%;
+          background-size: 100%;
+        }
+
+        @include mq_max {
+          position: static;
+          display: block;
+          margin: 5vw auto 0;
+          width: 92%;
+          height: 85vw;
+          background-position: top center;
+          -webkit-background-size: contain;
+          background-size: contain;
+        }
+      }
+    }
+
+    header {
+      margin-bottom: 65px;
+
+      @include mq_max {
+        margin-bottom: 33px;
+      }
+    }
+    .cap {
+      margin-top: 3em;
+      line-height: 1.6;
+      @include mq_max {
+        margin-top: 2em;
+      }
+    }
+  }
+
+
+  .super {
+    vertical-align: super;
+    font-size: 1.1rem;
+  }
+
+  .sec-kodawari-box {
+    position: relative;
+
+    + .sec-kodawari-box {
+      @include mq_max {
+        margin-top: 140px;
+      }
+    }
+
+    .main-box {
+      position: relative;
+      &:before{
+        content: '';
+        position: absolute;
+        top: -97px;
+        left: 0;
+        width: 242px;
+        height: 176px;
+        z-index: 1;
+
+        @include mq_max {
+          top: -127px;
+          left: 12px;
+          width: 39.316239%;
+          height: 116px;
+        }
+      }
+    }
+
+    &.sec01 {
+      .main-box {
+        &:before{
+          background: url(../img/bosley/img-txt-bosley04.png) no-repeat center center;
+          -webkit-background-size: contain;
+          background-size: contain;
+
+          @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx){
+            background: url(../img/bosley/img-txt-bosley04@2x.png) no-repeat;
+            -webkit-background-size: 100%;
+            background-size: 100%;
+          }
+        }
+      }
+    }
+    &.sec02 {
+      .main-box {
+        &:before{
+          left: inherit;
+          right: 0;
+          background: url(../img/bosley/img-txt-bosley05.png) no-repeat center center;
+          -webkit-background-size: contain;
+          background-size: contain;
+
+          @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx){
+            background: url(../img/bosley/img-txt-bosley05@2x.png) no-repeat;
+            -webkit-background-size: 100%;
+            background-size: 100%;
+          }
+
+          @include mq_max {
+            right: 12px;
+          }
+        }
+      }
+    }
+    &.sec03 {
+      .main-box {
+        padding-bottom: 35px;
+        &:before{
+          background: url(../img/bosley/img-txt-bosley06.png) no-repeat center center;
+          -webkit-background-size: contain;
+          background-size: contain;
+
+          @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx){
+            background: url(../img/bosley/img-txt-bosley06@2x.png) no-repeat;
+            -webkit-background-size: 100%;
+            background-size: 100%;
+          }
+        }
+      }
+    }
+
+    .box {
+      float: right;
+      position: relative;
+      box-shadow:0px 9px 19px 6px rgba(144,69,72,.1);
+
+
+      &:after{
+        content: '';
+        position: absolute;
+        top: -60px;
+        right: 43px;
+        width: 100vw;
+        height: 82.5%;
+        background: #fce5e8;
+        z-index: -1;
+
+        @include mq_max {
+          top: -100px;
+        }
+      }
+
+      &.left {
+        float: left;
+
+        &:after{
+          left: 43px;
+          right: inherit;
+
+        }
+      }
+
+      header {
+        margin-bottom: 25px;
+        @include mq_max {
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    .box {
+      background: #fff;
+      font-size: 1.8rem;
+      text-align: center;
+      line-height: 2.22;
+      width: 75.37037%;
+      max-width: 814px;
+      padding: 100px 87px 80px;
+      /*
+      border: solid 1px #f00;
+       */
+
+      @include mq_max {
+        font-size: 1.2rem;
+        line-height: 2.3;
+        width: 100%;
+        max-width: none;
+        padding: 30px 10px;
+
+      }
+
+      .detail-box {
+        background: #fef5f6;
+        margin-top: 40px;
+        padding: 0 40px 30px;
+
+        &.short {
+          padding: 0 60px 30px;
+        }
+
+        @include mq_max {
+          margin-top: 15px;
+          padding: 0 20px 15px;
+
+          &.short {
+            padding: 0 20px 30px;
+          }
+        }
+
+        .flex {
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: -ms-flex;
+          display: -o-flex;
+          display: flex;
+
+          justify-content: center;
+
+          padding: 0 20px;
+        }
+
+        figure {
+          img {
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+
+            @include mq_max {
+              padding: 0 10px;
+            }
+          }
+          margin-bottom: 7px;
+        }
+        .item {
+          font-size: 1.5rem;
+          font-weight: bold;
+          line-height: 1.46;
+          width: 33.333333%;
+          margin-top: 2em;
+
+          @include mq_max {
+            margin-top: 1em;
+          }
+
+          .text {
+            margin-top: 1em;
+
+            @include mq_max {
+              font-size: 1.2rem;
+              line-height: 1.33;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .caption {
+    font-size: 1.2rem;
+    text-align: left;
+    line-height: 1.66;
+    margin-top: 2.5em;
+
+    @include mq_max {
+      font-size: .9rem;
+      line-height: 1.33;
+      margin-top: 2em;
+    }
+  }
+}

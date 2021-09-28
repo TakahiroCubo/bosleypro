@@ -1,0 +1,307 @@
+@charset "utf-8";
+
+//パーシャル読み込み
+@import "set"; //便利セット
+@import "common"; //サイトで使う共通セット
+
+#main {
+  .item_mv {
+    margin: 60px auto 90px;
+    max-width: auto;
+    height: 28vw;
+    max-height: 438px;
+    background: url("/assets/img/product/pc_item_mv.jpg"),
+      url("/assets/img/product/pc_item_mv.jpg") no-repeat center/100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+      background: url(/assets/img/product/pc_item_mv@2x.jpg) no-repeat center/cover,
+        url("/assets/img/product/pc_item_mv.jpg") no-repeat center/100% 100%;
+    }
+    @include mq_min(1920) {
+      @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+        background: url(/assets/img/product/pc_item_mv@2x.jpg) no-repeat center/contain,
+          url("/assets/img/product/pc_item_mv.jpg") no-repeat center/100% 100%;
+      }
+    }
+
+    .main-box {
+      padding-top: 0;
+    }
+    @include mq_max {
+      margin: 30px auto 12vw;
+      height: auto;
+      background: none;
+      img {
+        width: 100%;
+      }
+
+      /*
+          background: url(../img/product/sp_item_mv.jpg) no-repeat center center;
+          background-position: center center;
+          -webkit-background-size: 100%;
+          background-size: 100%;
+          height: 250px;
+          margin: 30px auto 45px;
+
+          .main-box {
+            height: 250px;
+            padding-bottom: 0;
+            justify-content: center;
+            align-items: normal;
+          }
+
+          .text-box {
+            flex-direction: unset;
+            justify-content: flex-end;
+            text-align: left;
+
+            .main-copy {
+              font-size: 15px;
+            }
+          }
+            */
+    }
+  }
+  .main-box {
+    padding-top: 30px;
+
+    &.bg-after {
+      &:after {
+        right: 35px;
+      }
+    }
+    &.bg-gray {
+      &:after {
+        right: inherit;
+        left: 35px;
+      }
+    }
+
+    + .main-box {
+      margin-top: 120px;
+    }
+  }
+  @include mq_max {
+    .main-box {
+      padding: 10px 12px 30px;
+
+      &.bg-after {
+        &:after {
+          right: 17.3%;
+        }
+      }
+      &.bg-gray {
+        &:after {
+          left: 17.3%;
+        }
+      }
+
+      + .main-box {
+        margin-top: 35px;
+      }
+    }
+  }
+}
+
+section {
+  padding: 60px 0;
+
+  section {
+    padding: 0;
+  }
+}
+@include mq_max {
+  section {
+    padding: 30px 0;
+  }
+}
+
+.series-block {
+  padding-bottom: 70px;
+
+  @include mq_max {
+    padding-bottom: 10px;
+  }
+
+  .heading02 {
+    margin-bottom: 20px;
+
+    @include mq_max {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.item-block {
+  margin-left: 12px;
+  float: left;
+  width: 31.111111%;
+  max-width: 336px;
+  box-shadow: 0px 9px 19px 6px rgba(144, 69, 72, 0.1);
+
+  + .item-block {
+    margin-left: 2.5%;
+  }
+
+  .item-box {
+    padding: 20px 30px 35px;
+    position: relative;
+
+    header {
+      position: absolute;
+      top: 31px;
+      left: -11px;
+    }
+    figure {
+      margin: 41px 0 20px;
+    }
+
+    .item-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.8;
+
+      span {
+        font-weight: normal;
+      }
+
+      small {
+        font-weight: normal;
+        font-size: 1.1rem;
+      }
+    }
+
+    .btn-area {
+      position: absolute;
+      bottom: -25px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 71.428571%;
+      max-width: 240px;
+
+      @include mq_max {
+        bottom: -25px;
+        width: 87.5%;
+      }
+    }
+  }
+
+  .icon_rakuten {
+    /*
+        top: 4%;
+        left: inherit;
+        right: 5%;
+        */
+    width: 35%;
+
+    &.icon_rakuten190416 {
+      top: -15%;
+      left: inherit;
+      right: 30%;
+    }
+    &.icon_rakuten190417 {
+      top: -15%;
+      left: inherit;
+      right: -7%;
+    }
+  }
+}
+@include mq_max {
+  .item-block {
+    float: none;
+    width: 85%;
+    max-width: none;
+    margin: 0 auto;
+
+    + .item-block {
+      margin-left: auto;
+      margin-top: 50px;
+    }
+
+    .item-box {
+      padding: 20px 15px 35px;
+
+      header {
+        width: 90%;
+        left: -25px;
+      }
+      figure {
+        margin: 30px 0 10px;
+      }
+    }
+
+    .icon_rakuten {
+      &.icon_rakuten190416 {
+        top: -19%;
+        left: inherit;
+        right: 49%;
+      }
+      &.icon_rakuten190417 {
+        top: -19%;
+        left: inherit;
+        right: 11%;
+      }
+    }
+  }
+}
+
+div[class*="__btn"] {
+  margin-top: 30px;
+
+  a {
+    @include button(540, 1.6, $color1);
+    line-height: 50px;
+    text-align: left;
+    padding-left: 2em;
+
+    @include mq_max {
+      /*
+            line-height: 30px;
+             */
+      /*
+            font-size: 1.3rem;
+             */
+    }
+  }
+
+  + div[class*="__btn"] {
+    margin-top: 24px;
+  }
+}
+
+.bnr-area {
+  text-align: center;
+  padding: 40px 0 80px;
+
+  @include mq_max {
+    padding: 40px 12px 50px;
+  }
+}
+
+/*
+@include mq_max {
+    #main .main-box.bg-after:after {
+        right: 17.3%;
+
+    }
+}
+*/
+
+.pc_item_mv_text {
+  width: 266px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-210%, -50%);
+  @include mq_max {
+    transform: translate(23%, -50%);
+    width: 35.026041vw !important;
+  }
+}

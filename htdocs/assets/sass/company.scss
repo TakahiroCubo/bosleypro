@@ -1,0 +1,190 @@
+@charset "utf-8";
+
+//パーシャル読み込み
+@import "set"; //便利セット
+@import "common"; //サイトで使う共通セット
+
+
+.copy {
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 2.25;
+    padding: 0px 0 50px;
+}
+@include mq_max {
+    .copy {
+        font-size: 1.2rem;
+        line-height: 2.0;
+        padding: 0px 0 25px;
+    }
+}
+
+.main-box {
+    padding-top: 100px;
+    padding-bottom: 60px;
+
+    &.security {
+        padding-bottom: 40px;
+    }
+}
+@include mq_max {
+    #main {
+        .main-box {
+            padding-top: 35px;
+            padding-bottom: 40px;
+        }
+    }
+}
+
+section {
+    padding: 60px 0;
+
+    &#main {
+        padding-bottom: 120px;
+    }
+
+    + section {
+        margin-top: 50px;
+    }
+}
+@include mq_max {
+    section {
+        padding: 30px 0;
+
+      &#main {
+        padding-bottom: 70px;
+      }
+
+        + section {
+            margin-top: 30px;
+        }
+    }
+}
+
+.company-block {
+    padding: 45px 49px;
+    box-shadow: 10px 10px 10px 6px rgba(144, 144, 144, 0.1);
+
+    @include mq_max {
+        padding: 25px;
+    }
+
+    .block {
+        font-size: 15px;
+        text-align: center;
+        line-height: 2.2;
+        margin-top: 10px;
+
+        @include mq_max {
+            font-size: 12px;
+            text-align: left;
+        }
+
+    }
+
+    .list {
+        width: 73%;
+        margin: 0 auto;
+        text-align: left;
+        line-height: 1.8;
+        padding-left: 1em;
+
+        @include mq_max {
+            width: 100%;
+        }
+
+        &.text-under {
+            margin-top: 1em;
+        }
+
+        li {
+            list-style-type: disc;
+
+            + li {
+                margin-top: .5em;
+            }
+        }
+    }
+
+    .box {
+        width: 49%;
+        margin: 0 auto;
+        text-align: left;
+        line-height: 1.8;
+
+        @include mq_max {
+            width: 100%;
+        }
+
+        &.text-under {
+            margin-top: 1em;
+        }
+    }
+
+}
+
+.log {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 15px;
+
+    p {
+        + p {
+            margin-top: 1em;
+        }
+    }
+}
+
+
+/* テーブルのCSS用意する */
+.tblType01 {
+    width: 100%;
+    /*
+    margin-top: 45px;
+     */
+    font-size: 15px;
+    border: 2px solid #cfcfcf;
+
+    @include mq_max {
+        margin-top: 25px;
+        border-bottom: none;
+
+    }
+
+    th,
+    td {
+        padding: 18px 15px;
+        border-top: 2px solid #cfcfcf;
+        border-bottom: 2px solid #cfcfcf;
+        vertical-align: middle;
+
+    }
+
+    th {
+        background: #eeeeee;
+        border-right: 2px solid #cfcfcf;
+        font-weight: bold;
+        text-align: center;
+        width: 20%;
+
+        @include mq_max {
+            border: none;
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 5px 15px;
+        }
+    }
+    td {
+        padding: 18px 55px;
+
+        @include mq_max {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 5px 15px;
+        }
+    }
+
+
+}

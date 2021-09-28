@@ -1,0 +1,578 @@
+#main {
+  padding-bottom: 120px;
+}
+
+#main .main-visual {
+  background: #ecebef url(../img/bosley/img-mv.jpg) no-repeat center center;
+}
+
+#main .main-visual .logo {
+  width: 103px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  #main .main-visual {
+    background: #ecebef url(../img/bosley/img-mv@2x.jpg) no-repeat center center;
+    background-size: 100%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #main .main-visual {
+    background-position: right top;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main {
+    padding-bottom: 60px;
+  }
+  #main .main-visual {
+    background: url(../img/bosley/img-mv_sp.jpg) no-repeat center center;
+    background-position: center center;
+    height: 420px;
+    margin-bottom: 50px;
+  }
+  #main .main-visual .main-box {
+    padding-top: 0;
+  }
+  #main .main-visual .logo {
+    width: 116px;
+  }
+}
+
+#main .main-visual.main-visual02 {
+  background: url(../img/bosley/img-mv02.jpg) no-repeat center center;
+  height: 373px;
+  text-align: right;
+  margin-bottom: 217px;
+}
+
+@media screen and (max-width: 768px) {
+  #main .main-visual.main-visual02 {
+    background: url(../img/bosley/img-mv02_sp.jpg) no-repeat center center;
+    background-size: contain;
+    height: 310px;
+    margin-top: 0;
+    margin-bottom: 187px;
+  }
+}
+
+#main .main-visual.main-visual02 .main-box {
+  height: 373px;
+}
+
+@media screen and (max-width: 768px) {
+  #main .main-visual.main-visual02 .main-box {
+    height: 310px;
+    padding-top: 0;
+  }
+}
+
+#main .main-visual.main-visual02 .text-box {
+  -webkit-box-orient: unset;
+  -webkit-box-direction: unset;
+      -ms-flex-direction: unset;
+          flex-direction: unset;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#main .main-visual.main-visual02 .text-box .copy {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  #main .main-visual {
+    background-size: cover;
+    margin-top: 30px;
+  }
+  #main .main-visual .main-box {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
+  }
+  #main .main-visual .main-box .copy {
+    height: auto;
+  }
+  #main .main-visual.main-visual02 .main-box .copy {
+    height: 310px;
+  }
+}
+
+#main .main-box {
+  /*
+    border: solid 1px #f00;
+     */
+  /*
+    padding-bottom: 80px;
+     */
+}
+
+#main .main-box.caption {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  #main .main-box {
+    padding-bottom: 40px;
+  }
+}
+
+#main .sec-box {
+  font-size: 1.8rem;
+  line-height: 2.2;
+  min-height: 523px;
+  position: relative;
+}
+
+#main .sec-box dl {
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+
+#main .sec-box dt {
+  /* device
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      padding-bottom: 32px;
+      */
+  margin-bottom: 32px;
+  /* device
+      .num {
+        margin-left: 20px;
+        img {
+          vertical-align: baseline;
+        }
+      }
+      */
+  /* device
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background: #fb2477;
+      }
+      */
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-box dt {
+    padding-bottom: 4vw;
+    margin-bottom: 4vw;
+  }
+  #main .sec-box dt .num {
+    margin-left: 2vw;
+  }
+  #main .sec-box dt .num img {
+    width: 13vw;
+  }
+}
+
+#main .sec-box dd {
+  font-size: 29px;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-box dd {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-box {
+    font-size: 1.3rem;
+    line-height: 2.3;
+  }
+}
+
+#main .sec-box.sec01 {
+  /*
+      background: url(../img/bosley/img-pic-bosley01.png) no-repeat;
+      background-position: calc(100% + 85px) 19px;
+      */
+}
+
+#main .sec-box.sec01:after {
+  content: '';
+  position: absolute;
+  top: 19px;
+  right: -85px;
+  width: 504px;
+  height: 504px;
+  background: url(../img/bosley/img-pic-bosley01.png) no-repeat;
+  z-index: -1;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  #main .sec-box.sec01:after {
+    background: url(../img/bosley/img-pic-bosley01@2x.png) no-repeat;
+    background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-box.sec01:after {
+    position: static;
+    display: block;
+    margin: 5vw auto 0;
+    width: 92%;
+    height: 85vw;
+    background-position: top center;
+    background-size: contain;
+  }
+}
+
+#main .sec-box.sec02 {
+  padding-left: 41.018518%;
+  margin-top: 134px;
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-box.sec02 {
+    padding-left: 0;
+    min-height: 760px;
+    margin-top: 0;
+  }
+}
+
+#main .sec-box.sec02:after {
+  content: '';
+  position: absolute;
+  top: -68px;
+  left: -104px;
+  width: 504px;
+  height: 504px;
+  background: url(../img/bosley/img-pic-bosley02.png) no-repeat;
+  z-index: -1;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  #main .sec-box.sec02:after {
+    background: url(../img/bosley/img-pic-bosley02@2x.png) no-repeat;
+    background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-box.sec02:after {
+    position: static;
+    display: block;
+    margin: 5vw auto 0;
+    width: 92%;
+    height: 85vw;
+    background-position: top center;
+    background-size: contain;
+  }
+}
+
+#main .sec-box.sec03 {
+  margin-top: 26px;
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-box.sec03 {
+    margin-top: 0;
+  }
+}
+
+#main .sec-box.sec03:after {
+  content: '';
+  position: absolute;
+  top: 19px;
+  right: -85px;
+  width: 504px;
+  height: 504px;
+  background: url(../img/bosley/img-pic-bosley03.png) no-repeat;
+  z-index: -1;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  #main .sec-box.sec03:after {
+    background: url(../img/bosley/img-pic-bosley03@2x.png) no-repeat;
+    background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-box.sec03:after {
+    position: static;
+    display: block;
+    margin: 5vw auto 0;
+    width: 92%;
+    height: 85vw;
+    background-position: top center;
+    background-size: contain;
+  }
+}
+
+#main .sec-box header {
+  margin-bottom: 65px;
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-box header {
+    margin-bottom: 33px;
+  }
+}
+
+#main .sec-box .cap {
+  margin-top: 3em;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-box .cap {
+    margin-top: 2em;
+  }
+}
+
+#main .super {
+  vertical-align: super;
+  font-size: 1.1rem;
+}
+
+#main .sec-kodawari-box {
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-kodawari-box + .sec-kodawari-box {
+    margin-top: 140px;
+  }
+}
+
+#main .sec-kodawari-box .main-box {
+  position: relative;
+}
+
+#main .sec-kodawari-box .main-box:before {
+  content: '';
+  position: absolute;
+  top: -97px;
+  left: 0;
+  width: 242px;
+  height: 176px;
+  z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-kodawari-box .main-box:before {
+    top: -127px;
+    left: 12px;
+    width: 39.316239%;
+    height: 116px;
+  }
+}
+
+#main .sec-kodawari-box.sec01 .main-box:before {
+  background: url(../img/bosley/img-txt-bosley04.png) no-repeat center center;
+  background-size: contain;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  #main .sec-kodawari-box.sec01 .main-box:before {
+    background: url(../img/bosley/img-txt-bosley04@2x.png) no-repeat;
+    background-size: 100%;
+  }
+}
+
+#main .sec-kodawari-box.sec02 .main-box:before {
+  left: inherit;
+  right: 0;
+  background: url(../img/bosley/img-txt-bosley05.png) no-repeat center center;
+  background-size: contain;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  #main .sec-kodawari-box.sec02 .main-box:before {
+    background: url(../img/bosley/img-txt-bosley05@2x.png) no-repeat;
+    background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-kodawari-box.sec02 .main-box:before {
+    right: 12px;
+  }
+}
+
+#main .sec-kodawari-box.sec03 .main-box {
+  padding-bottom: 35px;
+}
+
+#main .sec-kodawari-box.sec03 .main-box:before {
+  background: url(../img/bosley/img-txt-bosley06.png) no-repeat center center;
+  background-size: contain;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  #main .sec-kodawari-box.sec03 .main-box:before {
+    background: url(../img/bosley/img-txt-bosley06@2x.png) no-repeat;
+    background-size: 100%;
+  }
+}
+
+#main .sec-kodawari-box .box {
+  float: right;
+  position: relative;
+  -webkit-box-shadow: 0px 9px 19px 6px rgba(144, 69, 72, 0.1);
+          box-shadow: 0px 9px 19px 6px rgba(144, 69, 72, 0.1);
+}
+
+#main .sec-kodawari-box .box:after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: 43px;
+  width: 100vw;
+  height: 82.5%;
+  background: #fce5e8;
+  z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-kodawari-box .box:after {
+    top: -100px;
+  }
+}
+
+#main .sec-kodawari-box .box.left {
+  float: left;
+}
+
+#main .sec-kodawari-box .box.left:after {
+  left: 43px;
+  right: inherit;
+}
+
+#main .sec-kodawari-box .box header {
+  margin-bottom: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-kodawari-box .box header {
+    margin-bottom: 15px;
+  }
+}
+
+#main .sec-kodawari-box .box {
+  background: #fff;
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 2.22;
+  width: 75.37037%;
+  max-width: 814px;
+  padding: 100px 87px 80px;
+  /*
+      border: solid 1px #f00;
+       */
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-kodawari-box .box {
+    font-size: 1.2rem;
+    line-height: 2.3;
+    width: 100%;
+    max-width: none;
+    padding: 30px 10px;
+  }
+}
+
+#main .sec-kodawari-box .box .detail-box {
+  background: #fef5f6;
+  margin-top: 40px;
+  padding: 0 40px 30px;
+}
+
+#main .sec-kodawari-box .box .detail-box.short {
+  padding: 0 60px 30px;
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-kodawari-box .box .detail-box {
+    margin-top: 15px;
+    padding: 0 20px 15px;
+  }
+  #main .sec-kodawari-box .box .detail-box.short {
+    padding: 0 20px 30px;
+  }
+}
+
+#main .sec-kodawari-box .box .detail-box .flex {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20px;
+}
+
+#main .sec-kodawari-box .box .detail-box figure {
+  margin-bottom: 7px;
+}
+
+#main .sec-kodawari-box .box .detail-box figure img {
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-kodawari-box .box .detail-box figure img {
+    padding: 0 10px;
+  }
+}
+
+#main .sec-kodawari-box .box .detail-box .item {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.46;
+  width: 33.333333%;
+  margin-top: 2em;
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-kodawari-box .box .detail-box .item {
+    margin-top: 1em;
+  }
+}
+
+#main .sec-kodawari-box .box .detail-box .item .text {
+  margin-top: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  #main .sec-kodawari-box .box .detail-box .item .text {
+    font-size: 1.2rem;
+    line-height: 1.33;
+  }
+}
+
+#main .caption {
+  font-size: 1.2rem;
+  text-align: left;
+  line-height: 1.66;
+  margin-top: 2.5em;
+}
+
+@media screen and (max-width: 768px) {
+  #main .caption {
+    font-size: .9rem;
+    line-height: 1.33;
+    margin-top: 2em;
+  }
+}
+/*# sourceMappingURL=bosley.css.map */

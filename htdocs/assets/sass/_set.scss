@@ -1,0 +1,330 @@
+@charset "utf-8";
+
+//引数があるものに説明を記述してあります
+//デフォルト値と同じなら値を省略する事ができます
+//一部説明が必要そうなものは説明も記述してあります
+
+
+//------------------------------------------------------------
+//変化
+//------------------------------------------------------------
+@mixin henka {
+    transition: .3s ease-out;
+}
+
+//------------------------------------------------------------
+//通常クリアフィックス
+//------------------------------------------------------------
+@mixin cf {
+    overflow: hidden;
+}
+
+//------------------------------------------------------------
+//はみ出し用クリアフィックス
+//ボックスから外側にはみ出す要素がある場合、通常ではhiddenされるのでこちらを使用
+//------------------------------------------------------------
+@mixin cf2 {
+    &:after {
+        display: block;
+        content: '';
+        height: 0;
+        clear: both;
+    }
+}
+
+//------------------------------------------------------------
+//透明度
+//opacity（透明度を0～1の数値で指定）
+//------------------------------------------------------------
+@mixin opacity($opacity: 0.75) {
+    opacity: $opacity;
+}
+
+//------------------------------------------------------------
+//通常角丸
+//kadomaru（四つ角全部の角丸サイズ）
+//------------------------------------------------------------
+@mixin kadomaru($size: 5) {
+    border-radius: $size + px;
+}
+
+//------------------------------------------------------------
+//個別角丸
+//kadomaru2（左上の角丸サイズ、右上の角丸サイズ、右下の角丸サイズ、左下の角丸サイズ）
+//------------------------------------------------------------
+@mixin kadomaru2($top_left: 5, $top_right: 5, $bottom_right: 5, $bottom_left: 5) {
+    border-radius: $top_left+px $top_right+px $bottom_right+px $bottom_left+px;
+}
+
+//------------------------------------------------------------
+//ボックスサイジング
+//sizing（border-boxかcontent-boxを指定）
+//------------------------------------------------------------
+@mixin sizing($type: border-box) {
+    box-sizing: $type;
+}
+
+//------------------------------------------------------------
+//ボックスシャドウ
+//shadow（水平移動距離、垂直移動距離、ぼかし距離、カラー）
+//------------------------------------------------------------
+@mixin shadow($rangeX: 0, $rangeY: 0, $blur: 4, $color: #000) {
+    box-shadow: $rangeX+px $rangeY+px $blur+px $color;
+}
+
+//------------------------------------------------------------
+//バックグランドサイズ
+//bg_size（横幅、縦幅）
+//autoを入れる可能性もあるので、数値の場合は単位必須
+//------------------------------------------------------------
+@mixin bg_size($bg_width: auto, $bg_height: auto) {
+    background-size: $bg_width $bg_height;
+}
+
+//------------------------------------------------------------
+//通常グラデーション
+//grade（最初の色、最後の色、縦か横か）
+//注意点として、-ms-filterは#cccのように省略形が使えないのでしっかり#ccccccのように6桁で記述する事
+//------------------------------------------------------------
+@mixin grade($start: #cccccc, $stop: #333333, $vector: tate) {
+    background: $stop;
+
+    @if $vector==tate {
+        background: -webkit-linear-gradient(top, $start, $stop); // Safari 5.1-6.0, Chrome 10+, iOS Safari 5.1+, Android 4.0+
+        background: linear-gradient(to bottom, $start, $stop); // IE10, Chrome 26+, Firefox 16.0+, iOS Safari 6.1+, Opera 12.1+
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='"+ $start + "', endColorstr='"+ $stop + "', GradientType=0)"; // IE 6-9
+    }
+
+    @else {
+        background: -webkit-linear-gradient(left, $start, $stop);
+        background: linear-gradient(to right, $start, $stop);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='"+ $start + "', endColorstr='"+ $stop + "', GradientType=1)";
+    }
+}
+
+//------------------------------------------------------------
+//途中から色を変更できるグラデーション
+//grade2（最初の色、真ん中の色1、真ん中の色2、最後の色、縦か横か）
+//注意点として、-ms-filterは#cccのように省略形が使えないのでしっかり#ccccccのように6桁で記述する事
+//IE9は対応してないので通常グラデーションとなります
+//------------------------------------------------------------
+@mixin grade2($start: #cccccc, $middle1: #333333, $middle2: #999999, $stop: #333333, $vector: tate) {
+    background: $stop;
+
+    @if $vector==tate {
+        background: -webkit-linear-gradient(linear,
+            left top,
+            left bottom,
+            from($start),
+            color-stop(0.5, $middle1),
+            color-stop(0.5, $middle2),
+            to($stop));
+        background: linear-gradient(to bottom, $start 0, $middle1 50%, $middle2 50%, $stop 100%); // 他と少し記述が違うので注意(方向, 開始色 開始位置, 途中色 途中位置, 途中色 途中位置, 終了色 終了位置)
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='"+ $start + "', endColorstr='"+ $stop + "', GradientType=0)"; // IE 6-9
+    }
+
+    @else {
+        background: -webkit-linear-gradient(linear,
+            left top,
+            right top,
+            from($start),
+            color-stop(0.5, $middle1),
+            color-stop(0.5, $middle2),
+            to($stop));
+        background: linear-gradient(to right, $start 0, $middle1 50%, $middle2 50%, $stop 100%);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='"+ $start + "', endColorstr='"+ $stop + "', GradientType=1)";
+    }
+}
+
+//------------------------------------------------------------
+//通常グラデーションpie版
+//grade_pie（最初の色、最後の色、縦か横か）
+//IE9ではグラデーションと角丸を併用するとグラデーションが角丸にならないので、その場合はこちらを使用（pieのjs必須）
+//------------------------------------------------------------
+@mixin grade_pie($start: #ccc, $stop: #333, $vector: tate) {
+    background: $stop;
+
+    @if $vector==tate {
+        background: -webkit-linear-gradient(top, $start, $stop); // Safari 5.1-6.0, Chrome 10+, iOS Safari 5.1+, Android 4.0+
+        background: linear-gradient(to bottom, $start, $stop); // IE10, Chrome 26+, Firefox 16.0+, iOS Safari 6.1+, Opera 12.1+
+        -pie-background: linear-gradient(to bottom, $start, $stop); // IE9（pieを利用するbackgroundに関しては行頭に「-pie-」を記述する必要があり、jsで要素指定する必要がある）
+    }
+
+    @else {
+        background: -webkit-linear-gradient(left, $start, $stop);
+        background: linear-gradient(to right, $start, $stop);
+        -pie-background: linear-gradient(to right, $start, $stop);
+    }
+}
+
+//------------------------------------------------------------
+//ボーダーグラデーション
+//bd_grade（最初の色、最後の色、ボーダーの太さ、縦か横か）
+//IE9ではbefore・afterにグラデーションがかからないので最後の色のベタ塗りで処理
+//注意点として、-ms-filterは#cccのように省略形が使えないのでしっかり#ccccccのように6桁で記述する事
+//------------------------------------------------------------
+@mixin bd_grade($start: #cccccc, $stop: #333333, $size: 5, $vector: tate) {
+    position: relative;
+
+    @if $vector==tate {
+        border-top: $size+px solid $start;
+        border-bottom: $size+px solid $stop;
+
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+            width: $size+px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            @include grade($start, $stop, tate);
+        }
+
+        &:after {
+            left: auto;
+            right: 0;
+        }
+    }
+
+    @else {
+        border-left: $size+px solid $start;
+        border-right: $size+px solid $stop;
+
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: $size+px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            @include grade($start, $stop, yoko);
+        }
+
+        &:after {
+            top: auto;
+            bottom: 0;
+        }
+    }
+}
+
+//以下のtransform系mixinは値が一つの想定です
+//transformは値を繋げて一度に複数記述する事ができるので、複数同時に記述したい場合はパーシャルは使わず手書きしてください
+//ただし「origin」と「transition」はtransformと別なのでパーシャルを使っても大丈夫です
+//■記述例
+//-webkit-transform: translate(25%, 50%) scale(1.5, 0.5) rotate(15deg);
+//-ms-transform: translate(25%, 50%) scale(1.5, 0.5) rotate(15deg);
+//transform: translate(25%, 50%) scale(1.5, 0.5) rotate(15deg);
+
+//------------------------------------------------------------
+//移動
+//translate（水平移動距離、垂直移動距離）
+//単位は必須
+//------------------------------------------------------------
+@mixin translate($moveX: 0, $moveY: 0) {
+    -webkit-transform: translate($moveX, $moveY);
+    -ms-transform: translate($moveX, $moveY);
+    transform: translate($moveX, $moveY);
+}
+
+//------------------------------------------------------------
+//縮尺
+//scale（X軸の拡大率、Y軸の拡大率）
+//1.0で等倍
+//------------------------------------------------------------
+@mixin scale($ratioX: 0, $ratioY: 0) {
+    -webkit-transform: scale($ratioX, $ratioY);
+    -ms-transform: scale($ratioX, $ratioY);
+    transform: scale($ratioX, $ratioY);
+}
+
+//------------------------------------------------------------
+//回転
+//rotate（角度）
+//------------------------------------------------------------
+@mixin rotate($deg: 0) {
+    -webkit-transform: rotate($deg+deg);
+    -ms-transform: rotate($deg+deg);
+    transform: rotate($deg+deg);
+}
+
+//------------------------------------------------------------
+//傾斜
+//skew（角度）
+//------------------------------------------------------------
+@mixin skew($deg: 0) {
+    -webkit-transform: skew($deg+deg);
+    -ms-transform: skew($deg+deg);
+    transform: skew($deg+deg);
+}
+
+//------------------------------------------------------------
+//変形の基準位置
+//origin（X軸の位置、Y軸の位置）
+//単位は必須
+//------------------------------------------------------------
+@mixin origin($pointX: 0, $pointY: 0) {
+    -webkit-transform-origin: $pointX $pointY;
+    -ms-transform-origin: $pointX $pointY;
+    transform-origin: $pointX $pointY;
+}
+
+//------------------------------------------------------------
+//transformに動きをつける
+//transition（時間）
+//■注意：IE9では未サポートです
+//------------------------------------------------------------
+@mixin transition($time: 0) {
+    -webkit-transition: -webkit-transform $time+s;
+    transition: transform $time+s;
+}
+
+//------------------------------------------------------------
+//縦書き
+//tategaki（どちらから読むか）
+//right：右から左、left：左から右、その他：デフォルトに戻す
+//------------------------------------------------------------
+@mixin tategaki($vector: right) {
+    @if $vector==right {
+        -ms-writing-mode: tb-rl;
+        -webkit-writing-mode: vertical-rl;
+        writing-mode: vertical-rl;
+    }
+
+    @else if $vector==left {
+        -ms-writing-mode: tb-lr;
+        -webkit-writing-mode: vertical-lr;
+        writing-mode: vertical-lr;
+    }
+
+    @else {
+        -ms-writing-mode: lr-tb;
+        -webkit-writing-mode: horizontal-tb;
+        writing-mode: horizontal-tb;
+    }
+}
+
+//------------------------------------------------------------
+//三角矢印
+//arrow（矢印のサイズ、上からの距離、カラー、矢印の向き）
+//------------------------------------------------------------
+@mixin arrow($size: 10, $top: 5, $color: #333, $vector: left) {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: $top + px;
+        left: 0;
+        border: round($size / 2) + px solid transparent;
+        border-#{$vector}-color: $color;
+    }
+}
